@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THC — Touchless Head Control | Control Your Computer Without Touch</title>
+  <meta name="description"
+    content="THC is a hands-free software that lets you control your computer using head gestures. Accessible, real-time, and customizable." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#" class="navbar__logo">HandFreez❄️</a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#how-it-works" class="nav-link">How to Use</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#download" class="nav-link">Download</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#download" class="btn btn--primary navbar__cta">Launch Software</a>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="hero__badge">✨ Next-Gen Accessibility</span>
+        <h1 class="hero__title">Control Your Computer <span class="gradient-text">Without Touch</span></h1>
+        <p class="hero__subtitle">Use head gestures to interact with your system easily. THC brings hands-free computing
+          to everyone — accessible, intuitive, and lightning-fast.</p>
+        <div class="hero__actions">
+          <a href="#download" class="btn btn--primary btn--lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3" />
+            </svg>
+            Start Software
+          </a>
+          <a href="https://drive.google.com/file/d/1Ynfgt6zYfl-wf4YCvLxhmSMGHITqm5WJ/view?usp=drive_link" download class="btn btn--outline btn--lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Download THC
+          </a>
+        </div>
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <strong>10K+</strong>
+            <span>Downloads</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <strong>4.9★</strong>
+            <span>User Rating</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <strong>99%</strong>
+            <span>Accuracy</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__image">
+        <div class="hero__image-wrapper">
+          <img src="assets/hero-illustration.png" alt="Person using THC head control software" />
+          <div class="hero__image-glow"></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__bg-shape"></div>
+  </section>
+
+  <!-- ========== FEATURES ========== -->
+  <section class="section features" id="features">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">Features</span>
+        <h2 class="section__title">Everything You Need for <span class="gradient-text">Hands-Free</span> Control</h2>
+        <p class="section__desc">THC is packed with powerful features designed to make computer interaction effortless
+          and accessible for everyone.</p>
+      </div>
+      <div class="features__grid">
+        <div class="feature-card" id="feature-handsfree">
+          <div class="feature-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+              <line x1="6" y1="1" x2="6" y2="4" />
+              <line x1="10" y1="1" x2="10" y2="4" />
+              <line x1="14" y1="1" x2="14" y2="4" />
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Hands-Free Control</h3>
+          <p class="feature-card__desc">Navigate your entire computer using just your head movements. No mouse, no
+            touch, no keyboard needed for basic navigation.</p>
+        </div>
+        <div class="feature-card" id="feature-tracking">
+          <div class="feature-card__icon feature-card__icon--green">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Real-Time Tracking</h3>
+          <p class="feature-card__desc">Experience ultra-responsive head tracking powered by advanced computer vision.
+            Smooth, accurate, and lag-free interaction at 60fps.</p>
+        </div>
+        <div class="feature-card" id="feature-gestures">
+          <div class="feature-card__icon feature-card__icon--purple">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+              <line x1="9" y1="9" x2="9.01" y2="9" />
+              <line x1="15" y1="9" x2="15.01" y2="9" />
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Customizable Gestures</h3>
+          <p class="feature-card__desc">Personalize your gesture controls to match your comfort and needs. Map head
+            tilts, nods, and turns to any action you want.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="section how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">How to Use</span>
+        <h2 class="section__title">Get Started in <span class="gradient-text">3 Simple Steps</span></h2>
+        <p class="section__desc">Setting up THC is quick and easy. You'll be controlling your computer hands-free in
+          under a minute.</p>
+      </div>
+      <div class="steps">
+        <div class="step" id="step-camera">
+          <div class="step__number">1</div>
+          <div class="step__content">
+            <div class="step__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                <circle cx="12" cy="13" r="4" />
+              </svg>
+            </div>
+            <h3 class="step__title">Enable Camera</h3>
+            <p class="step__desc">Grant camera access so THC can detect your face and track your head movements in real
+              time.</p>
+          </div>
+        </div>
+        <div class="step__connector">
+          <svg width="40" height="2" viewBox="0 0 40 2">
+            <line x1="0" y1="1" x2="40" y2="1" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="6 4" />
+          </svg>
+        </div>
+        <div class="step" id="step-calibrate">
+          <div class="step__number">2</div>
+          <div class="step__content">
+            <div class="step__icon step__icon--green">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="22" y1="12" x2="18" y2="12" />
+                <line x1="6" y1="12" x2="2" y2="12" />
+                <line x1="12" y1="6" x2="12" y2="2" />
+                <line x1="12" y1="22" x2="12" y2="18" />
+              </svg>
+            </div>
+            <h3 class="step__title">Calibrate Movement</h3>
+            <p class="step__desc">Follow a brief calibration process to fine-tune the sensitivity and range to your
+              personal preferences.</p>
+          </div>
+        </div>
+        <div class="step__connector">
+          <svg width="40" height="2" viewBox="0 0 40 2">
+            <line x1="0" y1="1" x2="40" y2="1" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="6 4" />
+          </svg>
+        </div>
+        <div class="step" id="step-use">
+          <div class="step__number">3</div>
+          <div class="step__content">
+            <div class="step__icon step__icon--purple">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+            </div>
+            <h3 class="step__title">Start Using Gestures</h3>
+            <p class="step__desc">You're all set! Move your head to control the cursor, nod to click, and tilt to
+              scroll. It's that simple.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section about" id="about">
+    <div class="container about__inner">
+      <div class="about__content">
+        <span class="section__tag">About THC</span>
+        <h2 class="section__title">Making Technology <span class="gradient-text">Accessible</span> for Everyone</h2>
+        <p class="about__text">Touchless Head Control (THC) was born from a simple belief: technology should be
+          accessible to everyone, regardless of physical ability. Our software empowers individuals with limited
+          mobility to use computers independently, breaking down barriers to digital interaction.</p>
+        <p class="about__text">Built with cutting-edge computer vision and machine learning, THC transforms your webcam
+          into a powerful input device. Whether you have a temporary injury, a permanent disability, or simply want a
+          hands-free experience — THC is designed for you.</p>
+        <div class="about__highlights">
+          <div class="about__highlight">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>100% Free & Open Source</span>
+          </div>
+          <div class="about__highlight">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>Privacy-First — No Data Collection</span>
+          </div>
+          <div class="about__highlight">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>Built for Accessibility</span>
+          </div>
+        </div>
+      </div>
+      <div class="about__visual">
+        <div class="about__card">
+          <div class="about__card-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h3>Built for People</h3>
+          <p>Designed with users at the center of every decision</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DOWNLOAD ========== -->
+ <section class="section download" id="download">
+  <div class="container download__inner">
+    <div class="download__content">
+      <span class="section__tag section__tag--light">Download</span>
+      <h2 class="download__title">Download THC</h2>
+      <p class="download__desc">
+        Get the latest version of Touchless Head Control. Free, lightweight, and ready to use in minutes.
+      </p>
+
+      <!-- ✅ UPDATED BUTTON -->
+      <a href="https://drive.google.com/file/d/1Ynfgt6zYfl-wf4YCvLxhmSMGHITqm5WJ/view?usp=drive_link"
+         
+         class="btn btn--white btn--lg"
+         id="downloadBtn">
+         
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="7 10 12 15 17 10" />
+          <line x1="12" y1="15" x2="12" y2="3" />
+        </svg>
+
+        Download Now
+      </a>
+
+      <div class="download__meta">
+        <span class="download__badge">
+          Supports Windows 10/11
+        </span>
+        <span class="download__version">v1.0.0 · 2.4 MB</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">Contact</span>
+        <h2 class="section__title">Get In <span class="gradient-text">Touch</span></h2>
+        <p class="section__desc">Have questions, feedback, or need support? We'd love to hear from you.</p>
+      </div>
+      <form class="contact__form" id="contactForm" action="https://formsubmit.co/navnkumar.snk@gmail.com" method="POST">
+        <!-- FormSubmit Configuration -->
+        <input type="hidden" name="_subject" value="New THC Website Contact Message">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none">
+        <div class="form__row">
+          <div class="form__group">
+            <label for="name" class="form__label">Full Name</label>
+            <input type="text" id="name" name="name" class="form__input" placeholder="John Doe" required />
+          </div>
+          <div class="form__group">
+            <label for="email" class="form__label">Email Address</label>
+            <input type="email" id="email" name="email" class="form__input" placeholder="john@example.com" required />
+          </div>
+        </div>
+        <div class="form__group">
+          <label for="message" class="form__label">Message</label>
+          <textarea id="message" name="message" class="form__input form__textarea" placeholder="How can we help you?"
+            rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--lg" id="submitBtn">
+          Send Message
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13" />
+            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+          </svg>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#" class="footer__logo">HandFreez❄️</a>
+          <p class="footer__tagline">Making computers accessible through head gestures. Free, fast, and built for
+            everyone.</p>
+        </div>
+        <div class="footer__links-group">
+          <h4 class="footer__heading">Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How to Use</a></li>
+            <li><a href="#download">Download</a></li>
+          </ul>
+        </div>
+        <div class="footer__links-group">
+          <h4 class="footer__heading">Resources</h4>
+          <ul class="footer__links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Touchless Head Control (THC). All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
