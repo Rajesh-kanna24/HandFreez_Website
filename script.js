@@ -1,5 +1,5 @@
 /* ============================================
-   THC — Touchless Head Control
+   HandFreez — AI-Based Touchless HCI System
    JavaScript — Interactions & Functionality
    ============================================ */
 
@@ -9,23 +9,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
 
-  navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    navToggle.classList.toggle('active');
-  });
-
-  // Close mobile nav when a link is clicked
-  navLinks.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      navToggle.classList.remove('active');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      navToggle.classList.toggle('active');
     });
-  });
+
+    // Close mobile nav when a link is clicked
+    navLinks.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+      });
+    });
+  }
 
   // ---------- Navbar Scroll Effect ----------
   const navbar = document.getElementById('navbar');
 
   function handleNavbarScroll() {
+    if (!navbar) return;
     if (window.scrollY > 20) {
       navbar.classList.add('scrolled');
     } else {
@@ -63,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---------- Scroll Reveal Animation ----------
   const revealElements = document.querySelectorAll(
-    '.feature-card, .step, .about__content, .about__visual, .download__content, .contact__form, .section__header'
+    '.feature-card-v2, .about-card, .about-concepts-bar, .timeline-item, .download-info-card, .download-hero-btn, .contact__form, .section-header'
   );
 
   revealElements.forEach(el => el.classList.add('reveal'));
@@ -78,80 +81,88 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     },
     {
-      threshold: 0.15,
+      threshold: 0.12,
       rootMargin: '0px 0px -40px 0px'
     }
   );
 
   revealElements.forEach(el => revealObserver.observe(el));
 
+  // ---------- Staggered reveal for timeline items ----------
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  timelineItems.forEach((item, index) => {
+    item.style.transitionDelay = `${index * 0.08}s`;
+  });
+
   // ---------- Contact Form Submission (via FormSubmit.co) ----------
   const contactForm = document.getElementById('contactForm');
 
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
 
-    if (!name || !email || !message) {
-      showToast('Please fill in all fields.', 'error');
-      return;
-    }
-
-    // Show loading state
-    const submitBtn = document.getElementById('submitBtn');
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = `
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spin">
-        <path d="M12 2a10 10 0 1 0 10 10"/>
-      </svg>
-      Sending...
-    `;
-
-    // Send form data to FormSubmit.co
-    const formData = new FormData(contactForm);
-
-    fetch(contactForm.action, {
-      method: 'POST',
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
+      if (!name || !email || !message) {
+        showToast('Please fill in all fields.', 'error');
+        return;
       }
-    })
-    .then(response => {
-      if (response.ok) {
-        showToast('Message sent successfully! We\'ll get back to you soon.', 'success');
-        contactForm.reset();
-      } else {
-        throw new Error('Failed to send message');
-      }
-    })
-    .catch(error => {
-      console.error('Form submission error:', error);
-      showToast('Oops! Something went wrong. Please try again or email us directly.', 'error');
-    })
-    .finally(() => {
-      submitBtn.disabled = false;
+
+      // Show loading state
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
       submitBtn.innerHTML = `
-        Send Message
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="22" y1="2" x2="11" y2="13"/>
-          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spin">
+          <path d="M12 2a10 10 0 1 0 10 10"/>
         </svg>
+        Sending...
       `;
+
+      // Send form data to FormSubmit.co
+      const formData = new FormData(contactForm);
+
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          showToast('Message sent successfully! We\'ll get back to you soon.', 'success');
+          contactForm.reset();
+        } else {
+          throw new Error('Failed to send message');
+        }
+      })
+      .catch(error => {
+        console.error('Form submission error:', error);
+        showToast('Oops! Something went wrong. Please try again or email us directly.', 'error');
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `
+          Send Message
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        `;
+      });
     });
-  });
+  }
 
   // ---------- Toast Notification ----------
   function showToast(message, type = 'info') {
     // Remove any existing toast
-    const existingToast = document.querySelector('.toast');
+    const existingToast = document.querySelector('.toast-notification');
     if (existingToast) existingToast.remove();
 
     const toast = document.createElement('div');
-    toast.className = `toast ${type}`;
+    toast.className = `toast-notification ${type}`;
     toast.innerHTML = `
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         ${type === 'success'
@@ -182,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const downloadBtn = document.getElementById('downloadBtn');
   if (downloadBtn) {
     downloadBtn.addEventListener('click', () => {
-      showToast('Download started! Thank you for choosing THC.', 'success');
+      showToast('Download started! Thank you for choosing HandFreez.', 'success');
     });
   }
 
@@ -202,9 +213,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// ---------- Spin Animation for Loading State ----------
-const style = document.createElement('style');
-style.textContent = `
+// ---------- Spin Animation & Hamburger Toggle (injected styles) ----------
+const dynamicStyle = document.createElement('style');
+dynamicStyle.textContent = `
   @keyframes spin {
     to { transform: rotate(360deg); }
   }
@@ -221,4 +232,4 @@ style.textContent = `
     transform: rotate(-45deg) translate(5px, -5px);
   }
 `;
-document.head.appendChild(style);
+document.head.appendChild(dynamicStyle);
